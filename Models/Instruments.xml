@@ -1,0 +1,976 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<!-- Instruments -->
+	
+    <path>Aircraft/F-35/Models/cockpitscreen.ac</path>
+
+
+<!--
+   <model>
+
+    <offsets>
+      <x-m> 0.030 </x-m>
+      <y-m>0</y-m>
+      <z-m>-0.300</z-m>
+    </offsets>
+  </model>-->
+
+
+<!--radar-->
+
+<!--Y is Left to right
+X is In and Out 
+Z is Up and down-->
+
+
+
+
+   <model>
+<name>radarscreen</name>
+    <path>Aircraft/F-35/Models/Instruments/radar/radar-screen.xml</path>
+    <offsets>
+      <x-m> 0.001 </x-m>
+      <y-m>0.03</y-m>
+      <z-m>-0.13</z-m>
+    </offsets>
+  </model>
+
+<animation>
+
+  <object-name>radarscreen</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/gps</property>
+				<value>0</value>
+			</equals>
+  </condition>
+ </animation>
+
+<animation>
+  <object-name>aoa</object-name>
+  <object-name>but1</object-name>
+  <object-name>but2</object-name>
+  <object-name>but3</object-name>
+  <object-name>but4</object-name>
+  <object-name>but5</object-name>
+  <object-name>but6</object-name>
+  <object-name>but7</object-name>
+  <object-name>but8</object-name>
+  <object-name>but9</object-name>
+  <object-name>but0</object-name>
+  <object-name>cls</object-name>
+  <object-name>label</object-name>
+    <object-name>label1</object-name>
+      <object-name>label2</object-name>
+        <object-name>label3</object-name>
+  <object-name>gpsbackdrop</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/gps</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+<animation>
+
+  <object-name>blackout</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>sim/failure-manager/systems/electrical/serviceable</property>
+				<value>0</value>
+			</equals>
+  </condition>
+ </animation>
+
+
+<!--Hud-->
+
+<animation>
+  <object-name>hudcvr</object-name>
+  <object-name>hudglass</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/HUD</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+
+
+
+<animation>
+
+  <object-name>menu2</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+<animation>
+
+  <object-name>ELVF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/controls/flight/aileron/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+
+
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <!-- Replace 'HUD.l.canvas' with the object the canvas is placed on -->
+  <object-name>hudglass</object-name>
+</effect>
+
+<animation>
+
+  <object-name>AIF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/controls/flight/elevator/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+
+  <object-name>RUDF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/controls/flight/rudder/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+
+<animation>
+
+  <object-name>ENGF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/engines/engine/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+
+  <object-name>FSF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/engines/engine/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+
+  <object-name>AVF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/systems/static/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+
+
+<animation>
+
+  <object-name>FLCSF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>sim/failure-manager/systems/pitot/serviceable</property>
+				<value>0</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+
+<animation>
+
+  <object-name>WCSF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>controls/armament/weaponsfailed</property>
+				<value>1</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+
+  <object-name>FCRF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>controls/armament/radarfailed</property>
+				<value>1</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+  <object-name>VTOLF</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<equals>
+				<property>controls/VTOLfailed</property>
+				<value>1</value>
+			</equals>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+      </and>
+  </condition>
+ </animation>
+<animation>
+  <object-name>backfail</object-name>
+  <type>select</type>
+  <condition>
+      <equals>
+				<property>controls/screen/menu2</property>
+				<value>1</value>
+			</equals>
+
+  </condition>
+ </animation>
+
+
+  <animation>
+  <object-name>radarscreen</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>sim/failure-manager/systems/electrical/serviceable</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+
+<!--Warnings-->
+
+<animation>
+  <object-name>WARNING</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/warning</property>
+				<value>0</value>
+			</equals>
+
+  </condition>
+ </animation>
+
+<animation>
+  <object-name>CAUTION</object-name>
+  <type>select</type>
+  <condition>
+
+<equals>
+				<property>controls/screen/caution</property>
+				<value>0</value>
+			</equals>
+
+  </condition>
+ </animation>
+
+
+<animation>
+  <type>pick</type>
+   <object-name>warnclick</object-name>
+   <object-name>WARNING</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>systemalerts.clearwarning();</script>
+</binding>
+       </action>
+ </animation>
+<animation>
+  <type>pick</type>
+   <object-name>cautionclick</object-name>
+   <object-name>CAUTION</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>systemalerts.clearcaution();</script>
+</binding>
+       </action>
+ </animation>
+
+<!--Datalink gps-->
+
+<animation>
+  <type>pick</type>
+   <object-name>label</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>coordp.saveslot();</script>
+</binding>
+       </action>
+ </animation>
+<animation>
+  <type>pick</type>
+   <object-name>label1</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>coordp.readslot();</script>
+</binding>
+       </action>
+ </animation>
+<animation>
+  <type>pick</type>
+   <object-name>label2</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>coordp.sendcurrentslotdl();</script>
+</binding>
+       </action>
+ </animation>
+<animation>
+  <type>pick</type>
+   <object-name>label3</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>coordp.readfromrad();</script>
+</binding>
+       </action>
+ </animation>
+<!--Fuel-->
+
+<!--Full mid half low-->
+
+ <animation>
+  <object-name>full</object-name>
+  <type>select</type>
+  <condition>
+
+<greater-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.75</value>
+			</greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <object-name>mid</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<less-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.75</value>
+			</less-than>
+<greater-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.5</value>
+			</greater-than>
+</and>
+  </condition>
+ </animation>
+
+ <animation>
+  <object-name>half</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<less-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.5</value>
+			</less-than>
+<greater-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.2</value>
+			</greater-than>
+</and>
+  </condition>
+ </animation>
+ <animation>
+  <object-name>low</object-name>
+  <type>select</type>
+  <condition>
+<and>
+<less-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.2</value>
+			</less-than>
+<greater-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0</value>
+			</greater-than>
+</and>
+  </condition>
+ </animation>
+
+
+<animation>
+  <object-name>LOWFUEL</object-name>
+  <type>select</type>
+  <condition>
+
+
+<greater-than>
+				<property>consumables/fuel/total-fuel-norm</property>
+				<value>0.2</value>
+			</greater-than>
+
+  </condition>
+ </animation>
+
+
+<!--Modes RWR and RADAR-->
+
+<!--RWR-->
+
+
+<animation>
+  <object-name>bkg</object-name>
+  <type>select</type>
+  <condition>
+<equals>
+				<property>controls/screen/RWR</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+
+
+
+<animation>
+  <object-name>RWS</object-name>
+  <type>select</type>
+  <condition>
+<equals>
+				<property>instrumentation/radar/mode/main</property>
+				<value>0</value>
+			</equals>
+  </condition>
+ </animation>
+
+<animation>
+  <object-name>TWS</object-name>
+  <type>select</type>
+  <condition>
+<equals>
+				<property>instrumentation/radar/mode/main</property>
+				<value>1</value>
+			</equals>
+  </condition>
+ </animation>
+
+
+
+<!--Touch screen buttons-->
+
+<animation>
+  <type>pick</type>
+   <object-name>TRIMRESET</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>setprop("/controls/flight/elevator-trim", 0);setprop("/controls/flight/aileron-trim", 0);setprop("/controls/flight/rudder-trim", 0);</script>
+</binding>
+       </action>
+ </animation>
+<animation>
+  <type>pick</type>
+   <object-name>RWRTOGGLE</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+           <binding>
+        <command>property-toggle</command>
+        <property>controls/screen/RWR</property>
+      </binding>
+       </action>
+ </animation>
+
+
+
+<animation>
+  <type>pick</type>
+   <object-name>HUD</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+           <binding>
+        <command>property-toggle</command>
+        <property>controls/screen/HUD</property>
+      </binding>
+       </action>
+ </animation>
+
+<animation>
+  <type>pick</type>
+   <object-name>gps</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+           <binding>
+        <command>property-toggle</command>
+        <property>controls/screen/gps</property>
+      </binding>
+       </action>
+ </animation>
+
+
+
+
+<animation>
+  <type>pick</type>
+   <object-name>MENU2</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+           <binding>
+        <command>property-toggle</command>
+        <property>controls/screen/menu2</property>
+      </binding>
+       </action>
+ </animation>
+
+
+<animation>
+  <type>pick</type>
+   <object-name>rfuel</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+                            <binding>
+                            <command>nasal</command>
+                             <script>doors.doorsystem.wingsexport();</script>
+                             </binding>
+       </action>
+ </animation>
+
+
+
+ <animation>
+  <type>pick</type>
+   <object-name>lock</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>radar.next_Target_Index();</script>
+</binding>
+       </action>
+ </animation>
+
+
+<animation>
+  <type>pick</type>
+   <object-name>rdrmode</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+           <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/radar/mode/main</property>
+      </binding>
+       </action>
+ </animation>
+
+
+
+
+ <animation>
+  <type>pick</type>
+   <object-name>grid</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>setprop("/instrumentation/radar/grid", 1);</script>
+</binding>
+       </action>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+   <object-name>plane</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <interval-sec>0.2</interval-sec>
+   <binding>
+  <command>nasal</command>
+  <script>setprop("/instrumentation/radar/grid", 0);</script>
+</binding>
+       </action>
+ </animation>
+  <!--instrument animations-->
+
+
+ <animation>
+  <type>translate</type>
+  <object-name>contcur</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>0.01</factor>
+  <offset-m>0</offset-m>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>contcur</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>0.013</factor>
+  <offset-m>0</offset-m>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>nozzle</object-name>
+  <property>/engines/engine[0]/nozzle-pos-norm</property>
+  <factor>200</factor> <!-- The rotation in degrees... kinda -->
+
+  <axis>
+  <object-name>nozzle-axis</object-name>
+  </axis>
+ </animation>
+
+	 <animation>
+  <type>rotate</type>
+  <object-name>n1</object-name>
+  <property>/engines/engine[0]/n1</property>
+  <factor>2.4</factor> <!-- The rotation in degrees... kinda -->
+  <axis>
+  <object-name>n1-axis</object-name>
+  </axis>
+ </animation>
+
+	 <animation>
+  <type>rotate</type>
+  <object-name>n2</object-name>
+  <property>/engines/engine[0]/n2</property>
+  <factor>2.4</factor> <!-- The rotation in degrees... kinda -->
+  <axis>
+  <object-name>n2-axis</object-name>
+  </axis>
+ </animation>
+
+ 	 <animation>
+  <type>rotate</type>
+  <object-name>EGT</object-name>
+  <property>/engines/engine[0]/egt-degf</property>
+  <factor>0.14</factor> <!-- The rotation in degrees... kinda -->
+  <axis>
+  <object-name>EGT-axis</object-name>
+  </axis>
+ </animation>
+
+ 	 <animation>
+  <type>rotate</type>
+  <object-name>OIL</object-name>
+  <property>/engines/engine[0]/oil-pressure-psi</property>
+  <factor>3.4</factor> <!-- The rotation in degrees... kinda -->
+  <axis>
+  <object-name>OIL-axis</object-name>
+  </axis>
+ </animation>
+
+	 <animation>
+  <type>material</type>
+
+    <object-name>aoa</object-name>
+
+          
+  <ambient>
+    <red>0.0</red>
+    <green>1.0</green>
+    <blue>0.0</blue>
+  </ambient>
+  <diffuse>
+    <red>0.0</red>
+    <green>0.1</green>
+    <blue>0.0</blue>
+  </diffuse>
+  <emission>
+    <red>0.3</red>
+    <green>0.8</green>
+    <blue>0.3</blue>
+  </emission> 
+ </animation>
+
+ <!--Text-->
+ 	<text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+  <!--Y is Left to right
+X is In and Out 
+Z is Up and down-->
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.08</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">text-value</type>
+   <format type="string">Lnk16 TGT-COORDS Prev callsign %s</format>
+  <truncate type="bool">true</truncate>
+  <property>/instrumentation/datalink/lastcallsign</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+
+
+
+
+ <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.09</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Lat: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/datarec/lat</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.10</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Lon: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/datarec/lon</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+	 <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.11</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Alt: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/datarec/alt</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+
+	 <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.12</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Current CoordSlot: %5.f</format>
+  <truncate type="bool">true</truncate>
+  <property>/controls/radar/currentslot</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+
+<text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.13</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Lat: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/slots/lat</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.14</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Lon: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/slots/lon</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+	 <text>
+  <name>aoa</name>
+  <font>condensed.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+  <x-m>0.02</x-m>
+   <y-m>-0.07</y-m>
+   <z-m>-0.15</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+   <type type="string">number-value</type>
+   <format type="string">Alt: %5.4f</format>
+  <truncate type="bool">false</truncate>
+  <property>/controls/radar/slots/alt</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+
+
+
+</PropertyList>
